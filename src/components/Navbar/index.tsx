@@ -11,6 +11,9 @@ export interface NavbarProps {
 export function Navbar({ setNameFilter, setGenreFilter }: NavbarProps) {
   return (
     <Flex
+      position="fixed"
+      top="0"
+      zIndex="1"
       alignItems="center"
       justifyContent="space-around"
       h="50px"
