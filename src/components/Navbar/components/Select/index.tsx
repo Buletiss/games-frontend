@@ -30,9 +30,16 @@ export function Select({ setGenreFilter }: SelectProps) {
   }
 
   return (
-    <ChakraSelect maxW="15rem" w="100%" onChange={handleFilterByGenre}>
+    <ChakraSelect
+      color="white"
+      maxW="15rem"
+      w="100%"
+      onChange={handleFilterByGenre}
+    >
       {genres.map((genre) => (
-        <option value={genre}>{genre}</option>
+        <option style={{ color: "black" }} value={genre}>
+          {genre}
+        </option>
       ))}
     </ChakraSelect>
   );
