@@ -22,7 +22,9 @@ export default function Home() {
 
   return (
     <DefaultLayout>
-      <Navbar setNameFilter={setNameFilter} setGenreFilter={setGenreFilter} />
+      {!isLoading && (filteredGames.length || games.length) && (
+        <Navbar setNameFilter={setNameFilter} setGenreFilter={setGenreFilter} />
+      )}
       <SimpleGrid columns={columnsBreakpoints}>
         {isLoading && <Spinner color="white" />}
 
