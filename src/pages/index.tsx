@@ -1,12 +1,6 @@
 import { DefaultLayout } from "../_layout/defaultLayout";
-import {
-  Spinner,
-  SimpleGrid,
-  Center,
-  Box,
-  AbsoluteCenter,
-} from "@chakra-ui/react";
-import { GameCard } from "./components/GameCard";
+import { Spinner, SimpleGrid, Box, AbsoluteCenter } from "@chakra-ui/react";
+import GameCard from "./components/GameCard";
 import { useGames } from "../hooks/games";
 import { Navbar } from "../components/Navbar";
 import { useState } from "react";
