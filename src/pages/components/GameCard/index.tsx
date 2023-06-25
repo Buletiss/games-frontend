@@ -5,7 +5,7 @@ interface GameCardProps {
   game: Game;
 }
 
-export function GameCard({ game }: GameCardProps) {
+export default function GameCard({ game }: GameCardProps) {
   const marginBreakpoints = ["5", "10", "10", "6"];
   const gameCardFlexBreakpoints = ["15rem", "18rem"];
 
@@ -24,19 +24,19 @@ export function GameCard({ game }: GameCardProps) {
         transform: "scale(1.01)",
       }}
     >
-      <Image src={game.thumbnail} maxW="18rem" w="100%" h="auto" />
+      <Image src={game?.thumbnail} maxW="18rem" w="100%" h="auto" />
       <Flex flexDir="column" p="5">
         <Flex flexDir="column" w="100%" padding="0.2rem" color="white">
           <Heading fontWeight="bold" fontSize="3xl">
-            {game.title}
+            {game?.title}
           </Heading>
           <br />
           <Box color="#b1becc" marginTop="5">
-            <Text>Genero: {game.genre}</Text>
-            <Text>Plataforma: {game.platform}</Text>
-            <Text>Data de lançamento: {game.release_date}</Text>
-            <Text>Publisher: {game.publisher}</Text>
-            <Text marginTop="2">Description: {game.short_description}</Text>
+            <Text>Genero: {game?.genre}</Text>
+            <Text>Plataforma: {game?.platform}</Text>
+            <Text>Data de lançamento: {game?.release_date}</Text>
+            <Text>Publisher: {game?.publisher}</Text>
+            <Text marginTop="2">Description: {game?.short_description}</Text>
           </Box>
         </Flex>
       </Flex>
