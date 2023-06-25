@@ -32,7 +32,7 @@ export default function GameCard({ game }: GameCardProps) {
           </Heading>
           <br />
           <Box color="#b1becc" marginTop="5">
-            <Text>Genero: {game?.genre}</Text>
+            <Text>Género: {game?.genre}</Text>
             <Text>Plataforma: {game?.platform}</Text>
             <Text>Data de lançamento: {game?.release_date}</Text>
             <Text>Publicadora: {game?.publisher}</Text>
