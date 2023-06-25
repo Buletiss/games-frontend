@@ -1,34 +1,83 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<div align="center" id="top"> 
+  <img src="./.github/page.png" alt="games-frontend" />
 
-## Getting Started
+&#xa0;
 
-First, run the development server:
+<a href="https://games-frontend-ekn7ied52-zerobulletiss.vercel.app/">Demo</a>
+
+</div>
+
+<h1 align="center">games-frontend</h1>
+
+<p align="center">
+  <img alt="Github top language" src="https://img.shields.io/github/languages/top/Buletiss/games-frontend?color=56BEB8">
+
+  <img alt="Github language count" src="https://img.shields.io/github/languages/count/Buletiss/games-frontend?color=56BEB8">
+
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/Buletiss/games-frontend?color=56BEB8">
+
+</p>
+
+<p align="center">
+  <a href="#dart-about">About</a> &#xa0; | &#xa0; 
+  <a href="#sparkles-features">Features</a> &#xa0; | &#xa0;
+  <a href="#rocket-technologies">Technologies</a> &#xa0; | &#xa0;
+  <a href="#white_check_mark-requirements">Requirements</a> &#xa0; | &#xa0;
+  <a href="#checkered_flag-starting">Starting</a> &#xa0; | &#xa0;
+  <a href="#memo-license">License</a> &#xa0; | &#xa0;
+  <a href="https://github.com/Buletiss" target="_blank">Author</a>
+</p>
+
+<br>
+
+## :dart: About
+
+Projeto de Estágio Frontend React para a empresa App Masters
+Neste projeto foi necessario consumir uma API de jogos fornecida pela empresa, mostrar em tela, tratar possiveis erros obtidos da API e fazer filtros para a busca de Games
+
+## :sparkles: Features
+
+:heavy_check_mark: Show all games and information
+:heavy_check_mark: Search the game by name\
+:heavy_check_mark: Select to filter game by genre
+
+## :rocket: Technologies
+
+The following tools were used in this project:
+
+- [Axios](https://axios-http.com)
+- [React](https://pt-br.reactjs.org/)
+- [Chraka UI](https://chakra-ui.com/)
+- [TypeScript](https://www.typescriptlang.org/)
+
+## :white_check_mark: Requirements
+
+Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) and [Node](https://nodejs.org/en/) installed.
+
+## :checkered_flag: Starting
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+# Clone this project
+$ git clone https://github.com/Buletiss/games-frontend
+
+# Access
+$ cd games-frontend
+
+# Install dependencies
+$ yarn
+
+# Run the project
+$ yarn start
+
+# The server will initialize in the <http://localhost:3000>
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## :memo: License
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+This project is under license from MIT. For more details, see the [LICENSE](LICENSE.md) file.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Made with :heart: by <a href="https://github.com/Buletiss" target="_blank">Buletiss</a>
 
-## Learn More
+&#xa0;
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+<a href="#top">Back to top</a>
