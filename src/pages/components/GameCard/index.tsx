@@ -1,4 +1,4 @@
-import { Game } from "@/models/game";
+import { Game } from "../../../models/game";
 import { Flex, Image, Heading, Text, Box } from "@chakra-ui/react";
 
 interface GameCardProps {
