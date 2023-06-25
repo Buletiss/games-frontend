@@ -35,8 +35,8 @@ export default function GameCard({ game }: GameCardProps) {
             <Text>Genero: {game?.genre}</Text>
             <Text>Plataforma: {game?.platform}</Text>
             <Text>Data de lançamento: {game?.release_date}</Text>
-            <Text>Publisher: {game?.publisher}</Text>
-            <Text marginTop="2">Description: {game?.short_description}</Text>
+            <Text>Publicadora: {game?.publisher}</Text>
+            <Text marginTop="2">Descrição: {game?.short_description}</Text>
           </Box>
         </Flex>
       </Flex>
