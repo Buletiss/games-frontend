@@ -1,8 +1,14 @@
-import { DefaultLayout } from "@/_layout/defaultLayout";
-import { Spinner, SimpleGrid } from "@chakra-ui/react";
+import { DefaultLayout } from "../_layout/defaultLayout";
+import {
+  Spinner,
+  SimpleGrid,
+  Center,
+  Box,
+  AbsoluteCenter,
+} from "@chakra-ui/react";
 import { GameCard } from "./components/GameCard";
-import { useGames } from "@/hooks/games";
-import { Navbar } from "@/components/Navbar";
+import { useGames } from "../hooks/games";
+import { Navbar } from "../components/Navbar";
 import { useState } from "react";
 
 export default function Home() {
@@ -25,13 +31,18 @@ export default function Home() {
       {!isLoading && (filteredGames.length || games.length) && (
         <Navbar setNameFilter={setNameFilter} setGenreFilter={setGenreFilter} />
       )}
-      <SimpleGrid columns={columnsBreakpoints}>
+      <SimpleGrid marginTop="10" columns={columnsBreakpoints}>
         {isLoading && <Spinner color="white" />}
 
         {!isLoading &&
           !filteredGames.length &&
-          handleHasNoResponseFromFilters() &&
-          "Não foi encontrado nenhum resultado na busca"}
+          handleHasNoResponseFromFilters() && (
+            <Box position="relative">
+              <AbsoluteCenter color="white" textAlign="center">
+                Não foi encontrado nenhum resultado na busca
+              </AbsoluteCenter>
+            </Box>
+          )}
 
         {!isLoading &&
         (filteredGames.length > 0 || handleHasNoResponseFromFilters())
