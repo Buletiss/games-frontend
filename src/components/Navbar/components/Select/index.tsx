@@ -37,7 +37,7 @@ export function Select({ setGenreFilter }: SelectProps) {
       onChange={handleFilterByGenre}
     >
       {genres.map((genre) => (
-        <option style={{ color: "black" }} value={genre}>
+        <option key={genre} style={{ color: "black" }} value={genre}>
           {genre}
         </option>
       ))}
