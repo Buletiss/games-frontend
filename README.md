@@ -3,7 +3,7 @@
 
 &#xa0;
 
-<a href="https://games-frontend-ekn7ied52-zerobulletiss.vercel.app/">Demo</a>
+<a href="https://games-frontend-neon.vercel.app/">Demo</a>
 
 </div>
 
