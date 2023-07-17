@@ -3,6 +3,7 @@ import { Flex, Image, Heading, Text, Box } from "@chakra-ui/react";
 import { dateFormatter } from "../../../utils/dateFormat/";
 import Favorited from "@/components/Like";
 import Rate from "@/components/Rate";
+import { title } from "process";
 
 interface GameCardProps {
   game: Game;
@@ -11,7 +12,7 @@ interface GameCardProps {
 export default function GameCard({ game }: GameCardProps) {
   const marginBreakpoints = ["5", "10", "10", "6"];
   const gameCardFlexBreakpoints = ["15rem", "18rem"];
-  const formatDate = new Date(game?.release_date);
+  const formatDate = new Date(game?.release_date || "0000-00-00");
 
   return (
     <Flex
@@ -38,13 +39,13 @@ export default function GameCard({ game }: GameCardProps) {
       <Flex flexDir="column" p="5">
         <Flex flexDir="column" w="100%" padding="0.2rem" color="white">
           <Heading fontWeight="bold" fontSize="3xl">
-            {game?.title}
+            {game?.title!}
           </Heading>
           <br />
           <Box color="#b1becc" marginTop="5">
             <Text>Género: {game?.genre}</Text>
             <Text>Plataforma: {game?.platform}</Text>
-            <Text>Data de lançamento: {dateFormatter(formatDate)}</Text>
+            <Text>Data de lançamento: {game?.release_date}</Text>
             <Text>Publicadora: {game?.publisher}</Text>
             <Text marginTop="2">Descrição: {game?.short_description}</Text>
           </Box>
@@ -53,8 +54,8 @@ export default function GameCard({ game }: GameCardProps) {
             alignItems="center"
             justifyContent="space-between"
           >
-            <Favorited title={game.title} game={game} />
-            <Rate title={game.title} game={game} />
+            <Favorited title={game?.title} game={game} />
+            <Rate title={game?.title} game={game} />
           </Flex>
         </Flex>
       </Flex>
