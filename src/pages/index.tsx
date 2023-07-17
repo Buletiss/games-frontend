@@ -8,22 +8,33 @@ import { useState } from "react";
 export default function Home() {
   const [nameFilter, setNameFilter] = useState("");
   const [genreFilter, setGenreFilter] = useState("All");
-  const { games, filteredGames, isLoading } = useGames({
-    nameFilter,
-    genreFilter,
-  });
+  const [orderFilter, setOrderFilter] = useState("All");
+  const [showFavorites, setShowFavorites] = useState(false);
+
+  const { games, filteredGames, isLoading, favoritesGames, orderRate } =
+    useGames({
+      nameFilter,
+      genreFilter,
+      orderFilter,
+    });
   const columnsBreakpoints = [1, 1, 2, 3];
+
+  console.log("orderfilter", orderFilter);
 
   function handleHasNoResponseFromFilters() {
     return Boolean(
       genreFilter.length && nameFilter.length && !filteredGames.length
     );
   }
-
   return (
     <DefaultLayout>
       {!isLoading && (filteredGames.length || games.length) && (
-        <Navbar setNameFilter={setNameFilter} setGenreFilter={setGenreFilter} />
+        <Navbar
+          setNameFilter={setNameFilter}
+          setGenreFilter={setGenreFilter}
+          setShowFavorites={setShowFavorites}
+          setShowOrderRate={setOrderFilter}
+        />
       )}
       <SimpleGrid marginTop="10" columns={columnsBreakpoints}>
         {isLoading && <Spinner color="white" />}
@@ -38,8 +49,21 @@ export default function Home() {
             </Box>
           )}
 
-        {!isLoading &&
-        (filteredGames.length > 0 || handleHasNoResponseFromFilters())
+        {!isLoading && orderFilter && orderFilter.length > 0
+          ? orderRate.map((orderRating) => (
+              <GameCard key={orderRating.id} game={orderRating} />
+            ))
+          : filteredGames.length > 0 || handleHasNoResponseFromFilters()
+          ? filteredGames.map((filteredGame) => (
+              <GameCard key={filteredGame.id} game={filteredGame} />
+            ))
+          : games.map((game) => <GameCard key={game.id} game={game} />)}
+
+        {!isLoading && showFavorites && favoritesGames.length > 0
+          ? favoritesGames.map((favoriteGame) => (
+              <GameCard key={favoriteGame.id} game={favoriteGame} />
+            ))
+          : filteredGames.length > 0 || handleHasNoResponseFromFilters()
           ? filteredGames.map((filteredGame) => (
               <GameCard key={filteredGame.id} game={filteredGame} />
             ))
